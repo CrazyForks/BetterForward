@@ -51,7 +51,7 @@ class TGBot:
         self.time_zone = pytz.timezone(tz_str) if tz_str else pytz.UTC
 
         # Initialize managers
-        self.captcha_manager = CaptchaManager(self.bot, self.cache)
+        self.captcha_manager = CaptchaManager(self.bot, self.cache, self.group_id)
         self.auto_response_manager = AutoResponseManager(db_path, self.time_zone)
 
         # Initialize spam detection system
@@ -157,6 +157,8 @@ class TGBot:
     def load_settings(self):
         """Load settings from database into cache."""
         settings = self.database.get_all_settings()
+        for key, value in settings.items():
+            self.cache.set(f"setting_{key}", value)
         for key, value in settings.items():
             self.cache.set(f"setting_{key}", value)
 

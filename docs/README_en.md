@@ -17,7 +17,10 @@ Forward users' messages to topics in the group. Each user corresponds to a topic
 - Auto Response: Automatically replies to users' messages with predefined messages, and supports detection with regex.
   Allows setting active time for auto-reply.
 - Captcha: Added a human verification feature to ensure that users are real people, effectively preventing the sending
-  of spam messages.
+  of spam messages. Supports multiple verification methods:
+  - **Button Verification**: Simple button click verification
+  - **Math Verification**: Users solve simple math problems to prove they are human
+  - **TGuard Verification**: Advanced human verification service integrated with [TGuard](https://github.com/SideCloudGroup/TGuard), supporting multiple captcha drivers (hCaptcha, Cap.js, Turnstile) with a beautiful Telegram Mini Web App interface
 - Spam Protection: Intelligent spam filtering system with keyword-based detection. Supports extensible detector interface for integrating AI models, external APIs, and custom detection methods.
 - Broadcast Message: Allows admins to send a message to all users at once.
 
@@ -106,6 +109,37 @@ docker run --rm \
 containrrr/watchtower -cR \
 <Container Name>
 ```
+
+## Human Verification
+
+BetterForward supports multiple human verification methods to ensure only real users can send messages.
+
+### Supported Verification Methods
+
+1. **Button Verification** - The simplest verification method, users only need to click a button
+2. **Math Verification** - Users need to solve simple math problems to prove they are human
+3. **TGuard Verification** - Advanced human verification service integrated with [TGuard](https://github.com/SideCloudGroup/TGuard)
+   - Supports multiple captcha drivers: hCaptcha, Cap.js, Turnstile
+   - Beautiful verification interface via Telegram Mini Web App
+   - Requires TGuard API URL and API key configuration
+   - Automatically marks users as verified after completion
+
+### Configuring TGuard Verification
+
+1. Send `/help` command in the main group topic
+2. Select "🌐 TGuard API Settings" menu
+3. Set TGuard API URL (e.g., `https://your-tguard-domain.com`)
+4. Set TGuard API key
+5. Return to captcha settings and select "TGuard Captcha"
+
+### TGuard Verification Flow
+
+1. When a user sends their first message, BetterForward creates a verification request via TGuard API
+2. TGuard returns a verification URL and token
+3. BetterForward sends a message with a verification button (Mini Web App) to the user
+4. User clicks the button and completes human verification in the Web App
+5. After verification, when the user sends another message, BetterForward checks the verification status
+6. Once verified, user messages are forwarded normally
 
 ## Spam Protection
 

@@ -63,6 +63,8 @@ class AdminHandler:
                                        callback_data=json.dumps({"action": "blocked_reply_settings"})),
             types.InlineKeyboardButton("🔒" + _("Captcha Settings"),
                                        callback_data=json.dumps({"action": "captcha_settings"})),
+            types.InlineKeyboardButton("🛡️" + _("TGuard API Settings"),
+                                       callback_data=json.dumps({"action": "tguard_api_settings"})),
             types.InlineKeyboardButton("🌍" + _("Time Zone Settings"),
                                        callback_data=json.dumps({"action": "time_zone_settings"})),
             types.InlineKeyboardButton("📢" + _("Broadcast Message"),
@@ -532,6 +534,7 @@ class AdminHandler:
             _("Disable Captcha"): "disable",
             _("Math Captcha"): "math",
             _("Button Captcha"): "button",
+            _("TGuard Captcha"): "tguard",
         }
         if not self.check_valid_chat(message):
             return
@@ -551,6 +554,20 @@ class AdminHandler:
 
     def set_captcha(self, message: Message, value: str):
         """Set captcha setting."""
+        # Check if TGuard is selected and if API settings are configured
+        if value == "tguard":
+            api_url = self.database.get_setting('tguard_api_url')
+            api_key = self.database.get_setting('tguard_api_key')
+            if not api_url or not api_key:
+                markup = types.InlineKeyboardMarkup()
+                markup.add(types.InlineKeyboardButton("⬅️" + _("Back"),
+                                                      callback_data=json.dumps({"action": "captcha_settings"})))
+                self.bot.edit_message_text(
+                    _("TGuard Captcha requires API URL and API Key to be configured.\n"
+                      "Please configure them in TGuard API Settings first."),
+                    message.chat.id, message.message_id, reply_markup=markup)
+                return
+        
         self.database.set_setting('captcha', value)
         self.cache.set("setting_captcha", value)
         markup = types.InlineKeyboardMarkup()
@@ -558,6 +575,109 @@ class AdminHandler:
                                               callback_data=json.dumps({"action": "menu"})))
         self.bot.edit_message_text(_("Captcha settings updated"),
                                    message.chat.id, message.message_id, reply_markup=markup)
+
+    # TGuard API Settings
+    def tguard_api_settings_menu(self, message: Message):
+        """Display TGuard API settings menu."""
+        if not self.check_valid_chat(message):
+            return
+        
+        current_url = self.database.get_setting('tguard_api_url') or _("Not set")
+        current_key = self.database.get_setting('tguard_api_key') or _("Not set")
+        
+        # Mask API key for display
+        if current_key != _("Not set") and len(current_key) > 8:
+            masked_key = current_key[:4] + "*" * (len(current_key) - 8) + current_key[-4:]
+        else:
+            masked_key = current_key
+        
+        markup = types.InlineKeyboardMarkup()
+        markup.add(types.InlineKeyboardButton("🔗" + _("Set API URL"),
+                                              callback_data=json.dumps({"action": "set_tguard_api_url"})))
+        markup.add(types.InlineKeyboardButton("🔑" + _("Set API Key"),
+                                              callback_data=json.dumps({"action": "set_tguard_api_key"})))
+        markup.add(types.InlineKeyboardButton("⬅️" + _("Back"),
+                                              callback_data=json.dumps({"action": "menu"})))
+        
+        text = _("TGuard API Settings") + "\n\n"
+        text += _("API URL: {}").format(current_url) + "\n"
+        text += _("API Key: {}").format(masked_key) + "\n"
+        
+        self.bot.send_message(text=text,
+                              chat_id=message.chat.id,
+                              message_thread_id=None,
+                              reply_markup=markup)
+
+    def set_tguard_api_url(self, message: Message):
+        """Start setting TGuard API URL."""
+        if not self.check_valid_chat(message):
+            return
+        msg = self.bot.edit_message_text(
+            text=_("Please send the TGuard API URL (e.g., https://example.com).\n"
+                   "Send /cancel to cancel this operation."),
+            chat_id=self.group_id, message_id=message.message_id)
+        self.bot.register_next_step_handler(msg, self.process_tguard_api_url)
+
+    def process_tguard_api_url(self, message: Message):
+        """Process TGuard API URL setting."""
+        if not self.check_valid_chat(message):
+            return
+        if isinstance(message.text, str) and message.text.startswith("/cancel"):
+            self.bot.send_message(self.group_id, _("Operation cancelled"))
+            return
+        if message.content_type != "text":
+            self.bot.send_message(self.group_id, _("Invalid input"))
+            return
+        
+        api_url = message.text.strip()
+        # Basic URL validation
+        if not (api_url.startswith("http://") or api_url.startswith("https://")):
+            self.bot.send_message(self.group_id, _("Invalid URL format. Please enter a valid URL starting with http:// or https://"))
+            return
+        
+        self.database.set_setting('tguard_api_url', api_url)
+        self.cache.set("setting_tguard_api_url", api_url)
+        
+        markup = types.InlineKeyboardMarkup()
+        markup.add(types.InlineKeyboardButton("⬅️" + _("Back"),
+                                              callback_data=json.dumps({"action": "tguard_api_settings"})))
+        self.bot.send_message(self.group_id, _("TGuard API URL updated: {}").format(api_url),
+                              reply_markup=markup)
+
+    def set_tguard_api_key(self, message: Message):
+        """Start setting TGuard API Key."""
+        if not self.check_valid_chat(message):
+            return
+        msg = self.bot.edit_message_text(
+            text=_("Please send the TGuard API Key.\n"
+                   "Send /cancel to cancel this operation."),
+            chat_id=self.group_id, message_id=message.message_id)
+        self.bot.register_next_step_handler(msg, self.process_tguard_api_key)
+
+    def process_tguard_api_key(self, message: Message):
+        """Process TGuard API Key setting."""
+        if not self.check_valid_chat(message):
+            return
+        if isinstance(message.text, str) and message.text.startswith("/cancel"):
+            self.bot.send_message(self.group_id, _("Operation cancelled"))
+            return
+        if message.content_type != "text":
+            self.bot.send_message(self.group_id, _("Invalid input"))
+            return
+        
+        api_key = message.text.strip()
+        if not api_key:
+            self.bot.send_message(self.group_id, _("API key cannot be empty"))
+            return
+        
+        self.database.set_setting('tguard_api_key', api_key)
+        self.cache.set("setting_tguard_api_key", api_key)
+        
+        markup = types.InlineKeyboardMarkup()
+        markup.add(types.InlineKeyboardButton("⬅️" + _("Back"),
+                                              callback_data=json.dumps({"action": "tguard_api_settings"})))
+        self.bot.send_message(self.group_id, _("TGuard API Key updated successfully."),
+                              reply_markup=markup)
 
     # Time Zone Settings
     def time_zone_settings_menu(self, message: Message):

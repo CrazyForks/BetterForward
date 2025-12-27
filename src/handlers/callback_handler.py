@@ -116,6 +116,12 @@ class CallbackHandler:
                 self.admin_handler.captcha_settings_menu(call.message)
             case "set_captcha":
                 self.admin_handler.set_captcha(call.message, data["value"])
+            case "tguard_api_settings":
+                self.admin_handler.tguard_api_settings_menu(call.message)
+            case "set_tguard_api_url":
+                self.admin_handler.set_tguard_api_url(call.message)
+            case "set_tguard_api_key":
+                self.admin_handler.set_tguard_api_key(call.message)
             case "broadcast_message":
                 self.admin_handler.broadcast_message(call.message)
             case "confirm_broadcast":

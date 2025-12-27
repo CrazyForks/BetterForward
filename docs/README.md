@@ -15,7 +15,10 @@
 - 团队协作：多个管理员可以同时处理用户的消息。
 - 多语言：支持多种语言，包括英语和中文。
 - 自动回复：自动回复用户的消息，回复内容可预设。支持正则表达式匹配关键词。允许设置自动回复的生效时间。
-- 验证码：增加了人机验证功能，以确保用户是真人操作，从而有效防止垃圾信息（SPAM）的发送。
+- 验证码：增加了人机验证功能，以确保用户是真人操作，从而有效防止垃圾信息（SPAM）的发送。支持多种验证方式：
+  - **按钮验证**：简单的按钮点击验证
+  - **数学题验证**：通过解答数学题进行验证
+  - **TGuard验证**：集成 [TGuard](https://github.com/SideCloudGroup/TGuard) 提供的高级人机验证服务，支持多种验证码驱动（hCaptcha、Cap.js、Turnstile），通过Telegram Mini Web App提供美观的验证界面
 - 垃圾消息防御：基于关键词的智能垃圾消息过滤系统，自动识别并隔离垃圾内容。支持可扩展的检测器接口，可轻松对接其他检测方法（如AI模型、外部API等）。
 - 广播消息：允许管理员一次性向所有用户发送消息。
 
@@ -102,6 +105,37 @@ docker run --rm \
 containrrr/watchtower -cR \
 <容器名>
 ```
+
+## 人机验证
+
+BetterForward 支持多种人机验证方式，确保只有真实用户才能发送消息。
+
+### 支持的验证方式
+
+1. **按钮验证** - 最简单的验证方式，用户只需点击按钮即可完成验证
+2. **数学题验证** - 用户需要解答简单的数学题来证明自己是真人
+3. **TGuard验证** - 集成 [TGuard](https://github.com/SideCloudGroup/TGuard) 提供的高级人机验证服务
+   - 支持多种验证码驱动：hCaptcha、Cap.js、Turnstile
+   - 通过Telegram Mini Web App提供美观的验证界面
+   - 需要配置TGuard API地址和API密钥
+   - 验证完成后自动标记用户为已验证状态
+
+### 配置TGuard验证
+
+1. 在群组主话题中发送 `/help` 命令
+2. 选择 "🌐 TGuard API设置" 菜单
+3. 设置TGuard API地址（例如：`https://your-tguard-domain.com`）
+4. 设置TGuard API密钥
+5. 返回验证码设置，选择 "TGuard Captcha"
+
+### TGuard验证流程
+
+1. 用户首次发送消息时，BetterForward会向TGuard API发起验证请求
+2. TGuard返回验证链接和token
+3. BetterForward向用户发送包含验证按钮的消息（Mini Web App）
+4. 用户点击按钮，在Web App中完成人机验证
+5. 用户完成验证后，再次发送消息时，BetterForward会检查验证状态
+6. 验证通过后，用户消息正常转发
 
 ## 垃圾消息防御
 

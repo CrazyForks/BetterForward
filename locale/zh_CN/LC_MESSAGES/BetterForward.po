@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BetterForward\n"
-"POT-Creation-Date: 2025-11-24 10:46+0800\n"
-"PO-Revision-Date: 2025-11-24 10:46+0800\n"
+"POT-Creation-Date: 2025-12-27 21:28+0800\n"
+"PO-Revision-Date: 2025-12-27 21:28+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_CN\n"
@@ -56,47 +56,47 @@ msgstr "删除一个会话"
 msgid "Set verified status"
 msgstr "设置人机验证状态"
 
-#: src/bot.py:176 src/bot.py:177
+#: src/bot.py:178 src/bot.py:179
 msgid "Topic function is not enabled in this group"
 msgstr "话题功能在群组中未启用"
 
-#: src/bot.py:181
+#: src/bot.py:183
 msgid "Manage Topics"
 msgstr "管理话题"
 
-#: src/bot.py:182
+#: src/bot.py:184
 msgid "Delete Messages"
 msgstr "删除消息"
 
-#: src/bot.py:187 src/bot.py:188
+#: src/bot.py:189 src/bot.py:190
 #, python-brace-format
 msgid "Bot doesn't have {} permission"
 msgstr "Bot缺少{}权限"
 
-#: src/bot.py:193
+#: src/bot.py:195
 msgid "Bot started successfully"
 msgstr "Bot启动成功"
 
-#: src/bot.py:211
+#: src/bot.py:213
 #, python-brace-format
 msgid "Spam topic loaded: {}"
 msgstr "垃圾消息话题已加载：{}"
 
-#: src/bot.py:213
+#: src/bot.py:215
 #, python-brace-format
 msgid "Invalid spam topic ID in database: {}"
 msgstr "数据库中的垃圾消息话题ID无效：{}"
 
-#: src/bot.py:220
+#: src/bot.py:222
 msgid "Creating spam topic..."
 msgstr "正在创建垃圾消息话题……"
 
-#: src/bot.py:229
+#: src/bot.py:231
 #, python-brace-format
 msgid "Spam topic created with ID: {}"
 msgstr "垃圾消息话题已创建，ID：{}"
 
-#: src/bot.py:234
+#: src/bot.py:236
 msgid ""
 "This topic is used to collect spam messages detected by keywords.\n"
 "Messages here are automatically forwarded from users who sent spam content."
@@ -104,21 +104,21 @@ msgstr ""
 "此话题用于收集通过关键词检测到的垃圾消息。\n"
 "这里的消息都是从发送垃圾内容的用户自动转发而来。"
 
-#: src/bot.py:241
+#: src/bot.py:243
 #, python-brace-format
 msgid "Failed to create spam topic: {}"
 msgstr "创建垃圾消息话题失败：{}"
 
-#: src/bot.py:255 src/handlers/admin_handler.py:1126
+#: src/bot.py:257 src/handlers/admin_handler.py:1246
 #, python-brace-format
 msgid "Failed to reset spam topic: {}"
 msgstr "重置垃圾话题失败：{}"
 
-#: src/bot.py:268
+#: src/bot.py:270
 msgid "Stopping bot..."
 msgstr "正在关闭机器人……"
 
-#: src/bot.py:271
+#: src/bot.py:273
 msgid "Bot stopped"
 msgstr "机器人已停止"
 
@@ -131,11 +131,11 @@ msgstr "升级到数据库版本{}"
 msgid "Failed to upgrade database"
 msgstr "升级数据库失败"
 
-#: src/handlers/admin_handler.py:54 src/handlers/admin_handler.py:94
+#: src/handlers/admin_handler.py:54 src/handlers/admin_handler.py:96
 msgid "Auto Reply"
 msgstr "自动回复"
 
-#: src/handlers/admin_handler.py:56 src/handlers/admin_handler.py:489
+#: src/handlers/admin_handler.py:56 src/handlers/admin_handler.py:491
 msgid "Default Message"
 msgstr "默认消息"
 
@@ -151,56 +151,62 @@ msgstr "垃圾关键词"
 msgid "Blocked User Reply"
 msgstr "拉黑用户回复"
 
-#: src/handlers/admin_handler.py:64 src/handlers/admin_handler.py:547
+#: src/handlers/admin_handler.py:64 src/handlers/admin_handler.py:550
 msgid "Captcha Settings"
 msgstr "验证码设置"
 
-#: src/handlers/admin_handler.py:66
+#: src/handlers/admin_handler.py:66 src/handlers/admin_handler.py:602
+msgid "TGuard API Settings"
+msgstr "TGuard API设置"
+
+#: src/handlers/admin_handler.py:68
 msgid "Time Zone Settings"
 msgstr "时区设置"
 
-#: src/handlers/admin_handler.py:68
+#: src/handlers/admin_handler.py:70
 msgid "Broadcast Message"
 msgstr "消息公告"
 
-#: src/handlers/admin_handler.py:70
+#: src/handlers/admin_handler.py:72
 msgid "Show Host IP Info"
 msgstr "查询部署机器IP信息"
 
-#: src/handlers/admin_handler.py:78 src/handlers/admin_handler.py:81
+#: src/handlers/admin_handler.py:80 src/handlers/admin_handler.py:83
 msgid "Menu"
 msgstr "菜单"
 
-#: src/handlers/admin_handler.py:88
+#: src/handlers/admin_handler.py:90
 msgid "Add Auto Reply"
 msgstr "添加自动回复"
 
-#: src/handlers/admin_handler.py:90
+#: src/handlers/admin_handler.py:92
 msgid "Manage Existing Auto Reply"
 msgstr "管理自动回复"
 
-#: src/handlers/admin_handler.py:92 src/handlers/admin_handler.py:142
-#: src/handlers/admin_handler.py:259 src/handlers/admin_handler.py:279
-#: src/handlers/admin_handler.py:338 src/handlers/admin_handler.py:357
-#: src/handlers/admin_handler.py:385 src/handlers/admin_handler.py:448
-#: src/handlers/admin_handler.py:460 src/handlers/admin_handler.py:486
-#: src/handlers/admin_handler.py:514 src/handlers/admin_handler.py:523
-#: src/handlers/admin_handler.py:545 src/handlers/admin_handler.py:557
-#: src/handlers/admin_handler.py:601 src/handlers/admin_handler.py:641
-#: src/handlers/admin_handler.py:750 src/handlers/admin_handler.py:797
-#: src/handlers/admin_handler.py:807 src/handlers/admin_handler.py:814
-#: src/handlers/admin_handler.py:846 src/handlers/admin_handler.py:895
-#: src/handlers/admin_handler.py:908 src/handlers/admin_handler.py:922
-#: src/handlers/admin_handler.py:933 src/handlers/admin_handler.py:941
-#: src/handlers/admin_handler.py:983 src/handlers/admin_handler.py:1004
-#: src/handlers/admin_handler.py:1046 src/handlers/admin_handler.py:1064
-#: src/handlers/admin_handler.py:1108 src/handlers/admin_handler.py:1116
-#: src/handlers/admin_handler.py:1124 src/handlers/callback_handler.py:67
+#: src/handlers/admin_handler.py:94 src/handlers/admin_handler.py:144
+#: src/handlers/admin_handler.py:261 src/handlers/admin_handler.py:281
+#: src/handlers/admin_handler.py:340 src/handlers/admin_handler.py:359
+#: src/handlers/admin_handler.py:387 src/handlers/admin_handler.py:450
+#: src/handlers/admin_handler.py:462 src/handlers/admin_handler.py:488
+#: src/handlers/admin_handler.py:516 src/handlers/admin_handler.py:525
+#: src/handlers/admin_handler.py:548 src/handlers/admin_handler.py:563
+#: src/handlers/admin_handler.py:574 src/handlers/admin_handler.py:599
+#: src/handlers/admin_handler.py:642 src/handlers/admin_handler.py:677
+#: src/handlers/admin_handler.py:721 src/handlers/admin_handler.py:761
+#: src/handlers/admin_handler.py:870 src/handlers/admin_handler.py:917
+#: src/handlers/admin_handler.py:927 src/handlers/admin_handler.py:934
+#: src/handlers/admin_handler.py:966 src/handlers/admin_handler.py:1015
+#: src/handlers/admin_handler.py:1028 src/handlers/admin_handler.py:1042
+#: src/handlers/admin_handler.py:1053 src/handlers/admin_handler.py:1061
+#: src/handlers/admin_handler.py:1103 src/handlers/admin_handler.py:1124
+#: src/handlers/admin_handler.py:1166 src/handlers/admin_handler.py:1184
+#: src/handlers/admin_handler.py:1228 src/handlers/admin_handler.py:1236
+#: src/handlers/admin_handler.py:1244 src/handlers/callback_handler.py:67
 #: src/handlers/command_handler.py:159
 msgid "Back"
 msgstr "返回"
 
-#: src/handlers/admin_handler.py:104
+#: src/handlers/admin_handler.py:106
 msgid ""
 "Let's set up an automatic response.\n"
 "Send /cancel to cancel this operation.\n"
@@ -213,184 +219,186 @@ msgstr ""
 "\n"
 "请输入触发关键词或正则表达式"
 
-#: src/handlers/admin_handler.py:114 src/handlers/admin_handler.py:134
-#: src/handlers/admin_handler.py:162 src/handlers/admin_handler.py:509
-#: src/handlers/admin_handler.py:579 src/handlers/admin_handler.py:655
-#: src/handlers/admin_handler.py:787 src/handlers/admin_handler.py:1030
-#: src/handlers/callback_handler.py:138
+#: src/handlers/admin_handler.py:116 src/handlers/admin_handler.py:136
+#: src/handlers/admin_handler.py:164 src/handlers/admin_handler.py:511
+#: src/handlers/admin_handler.py:626 src/handlers/admin_handler.py:662
+#: src/handlers/admin_handler.py:699 src/handlers/admin_handler.py:775
+#: src/handlers/admin_handler.py:907 src/handlers/admin_handler.py:1150
+#: src/handlers/callback_handler.py:144
 msgid "Operation cancelled"
 msgstr "操作已取消"
 
-#: src/handlers/admin_handler.py:117 src/handlers/admin_handler.py:506
-#: src/handlers/admin_handler.py:791 src/handlers/admin_handler.py:1034
+#: src/handlers/admin_handler.py:119 src/handlers/admin_handler.py:508
+#: src/handlers/admin_handler.py:629 src/handlers/admin_handler.py:665
+#: src/handlers/admin_handler.py:911 src/handlers/admin_handler.py:1154
 msgid "Invalid input"
 msgstr "无效的输入"
 
-#: src/handlers/admin_handler.py:145
+#: src/handlers/admin_handler.py:147
 msgid "Invalid regular expression"
 msgstr "正则表达式不合法"
 
-#: src/handlers/admin_handler.py:152
+#: src/handlers/admin_handler.py:154
 msgid ""
 "Please send the response content. It can be text, stickers, photos and so on."
 msgstr "请发送自动回复的内容。可以是文本，贴纸，图片等类型。"
 
-#: src/handlers/admin_handler.py:166 src/handlers/admin_handler.py:702
+#: src/handlers/admin_handler.py:168 src/handlers/admin_handler.py:822
 msgid "The operation has timed out. Please initiate the process again."
 msgstr "操作已超时，请重新开始。"
 
-#: src/handlers/admin_handler.py:188 src/handlers/admin_handler.py:670
-#: src/handlers/message_handler.py:281 src/handlers/message_handler.py:458
-#: src/handlers/message_handler.py:459
+#: src/handlers/admin_handler.py:190 src/handlers/admin_handler.py:790
+#: src/handlers/message_handler.py:312 src/handlers/message_handler.py:489
+#: src/handlers/message_handler.py:490
 msgid "Unsupported message type"
 msgstr "不支持的消息种类"
 
-#: src/handlers/admin_handler.py:193
+#: src/handlers/admin_handler.py:195
 msgid "Yes"
 msgstr "是"
 
-#: src/handlers/admin_handler.py:196
+#: src/handlers/admin_handler.py:198
 msgid "No"
 msgstr "否"
 
-#: src/handlers/admin_handler.py:200
+#: src/handlers/admin_handler.py:202
 msgid "Do you want to set a start and end time for this auto response?"
 msgstr "是否为这条自动回复设置生效时间？"
 
-#: src/handlers/admin_handler.py:212 src/handlers/admin_handler.py:228
+#: src/handlers/admin_handler.py:214 src/handlers/admin_handler.py:230
 msgid "Please enter the start time in HH:MM format (24-hour clock):"
 msgstr "请输入生效时间，格式为HH:MM（24小时制）"
 
-#: src/handlers/admin_handler.py:223 src/handlers/admin_handler.py:242
+#: src/handlers/admin_handler.py:225 src/handlers/admin_handler.py:244
 msgid "Please enter the end time in HH:MM format (24-hour clock):"
 msgstr "请输入结束时间，格式为HH:MM（24小时制）"
 
-#: src/handlers/admin_handler.py:227 src/handlers/admin_handler.py:241
+#: src/handlers/admin_handler.py:229 src/handlers/admin_handler.py:243
 msgid "Invalid time format."
 msgstr "无效的时间格式"
 
-#: src/handlers/admin_handler.py:263 src/handlers/callback_handler.py:86
+#: src/handlers/admin_handler.py:265 src/handlers/callback_handler.py:86
 #: src/handlers/callback_handler.py:92 src/handlers/callback_handler.py:100
-#: src/handlers/callback_handler.py:106 src/handlers/callback_handler.py:143
-#: src/handlers/callback_handler.py:161 src/handlers/callback_handler.py:167
-#: src/handlers/callback_handler.py:175
+#: src/handlers/callback_handler.py:106 src/handlers/callback_handler.py:149
+#: src/handlers/callback_handler.py:167 src/handlers/callback_handler.py:173
+#: src/handlers/callback_handler.py:181
 msgid "Invalid action"
 msgstr "无效的操作"
 
-#: src/handlers/admin_handler.py:269
+#: src/handlers/admin_handler.py:271
 msgid "Auto reply added"
 msgstr "自动回复已添加"
 
-#: src/handlers/admin_handler.py:282
+#: src/handlers/admin_handler.py:284
 msgid "Auto Reply List:"
 msgstr "自动回复列表："
 
-#: src/handlers/admin_handler.py:283 src/handlers/admin_handler.py:389
-#: src/handlers/admin_handler.py:850
+#: src/handlers/admin_handler.py:285 src/handlers/admin_handler.py:391
+#: src/handlers/admin_handler.py:970
 #, python-brace-format
 msgid "Total: {}"
 msgstr "总计：{}"
 
-#: src/handlers/admin_handler.py:284 src/handlers/admin_handler.py:390
-#: src/handlers/admin_handler.py:851
+#: src/handlers/admin_handler.py:286 src/handlers/admin_handler.py:392
+#: src/handlers/admin_handler.py:971
 #, python-brace-format
 msgid "Page: {}"
 msgstr "页数：{}"
 
-#: src/handlers/admin_handler.py:290 src/handlers/admin_handler.py:341
+#: src/handlers/admin_handler.py:292 src/handlers/admin_handler.py:343
 #, python-brace-format
 msgid "Trigger: {}"
 msgstr "触发器：{}"
 
-#: src/handlers/admin_handler.py:291 src/handlers/admin_handler.py:342
+#: src/handlers/admin_handler.py:293 src/handlers/admin_handler.py:344
 #, python-brace-format
 msgid "Response: {}"
 msgstr "回复：{}"
 
-#: src/handlers/admin_handler.py:293 src/handlers/admin_handler.py:344
+#: src/handlers/admin_handler.py:295 src/handlers/admin_handler.py:346
 #, python-brace-format
 msgid "Is regex: {}"
 msgstr "是否为正则表达式：{}"
 
-#: src/handlers/admin_handler.py:294 src/handlers/admin_handler.py:345
+#: src/handlers/admin_handler.py:296 src/handlers/admin_handler.py:347
 msgid "Active time: "
 msgstr "生效时间："
 
-#: src/handlers/admin_handler.py:298 src/handlers/admin_handler.py:349
-#: src/handlers/admin_handler.py:987 src/handlers/admin_handler.py:1007
+#: src/handlers/admin_handler.py:300 src/handlers/admin_handler.py:351
+#: src/handlers/admin_handler.py:1107 src/handlers/admin_handler.py:1127
 msgid "Disabled"
 msgstr "已禁用"
 
-#: src/handlers/admin_handler.py:309 src/handlers/admin_handler.py:316
-#: src/handlers/admin_handler.py:416 src/handlers/admin_handler.py:421
-#: src/handlers/admin_handler.py:871 src/handlers/admin_handler.py:878
+#: src/handlers/admin_handler.py:311 src/handlers/admin_handler.py:318
+#: src/handlers/admin_handler.py:418 src/handlers/admin_handler.py:423
+#: src/handlers/admin_handler.py:991 src/handlers/admin_handler.py:998
 msgid "Previous Page"
 msgstr "上一页"
 
-#: src/handlers/admin_handler.py:312 src/handlers/admin_handler.py:320
-#: src/handlers/admin_handler.py:418 src/handlers/admin_handler.py:425
-#: src/handlers/admin_handler.py:874 src/handlers/admin_handler.py:882
+#: src/handlers/admin_handler.py:314 src/handlers/admin_handler.py:322
+#: src/handlers/admin_handler.py:420 src/handlers/admin_handler.py:427
+#: src/handlers/admin_handler.py:994 src/handlers/admin_handler.py:1002
 msgid "Next Page"
 msgstr "下一页"
 
-#: src/handlers/admin_handler.py:331
+#: src/handlers/admin_handler.py:333
 msgid "Auto reply not found"
 msgstr "未找到该自动回复"
 
-#: src/handlers/admin_handler.py:335 src/handlers/admin_handler.py:905
+#: src/handlers/admin_handler.py:337 src/handlers/admin_handler.py:1025
 msgid "Delete"
 msgstr "删除"
 
-#: src/handlers/admin_handler.py:359
+#: src/handlers/admin_handler.py:361
 msgid "Auto reply deleted"
 msgstr "已删除自动回复"
 
-#: src/handlers/admin_handler.py:388
+#: src/handlers/admin_handler.py:390
 msgid "Banned User List:"
 msgstr "封禁用户列表："
 
-#: src/handlers/admin_handler.py:393
+#: src/handlers/admin_handler.py:395
 msgid "No banned users"
 msgstr "没有被封禁的用户"
 
-#: src/handlers/admin_handler.py:403 src/handlers/admin_handler.py:468
+#: src/handlers/admin_handler.py:405 src/handlers/admin_handler.py:470
 msgid "Name"
 msgstr "姓名"
 
-#: src/handlers/admin_handler.py:405 src/handlers/admin_handler.py:470
+#: src/handlers/admin_handler.py:407 src/handlers/admin_handler.py:472
 msgid "Username"
 msgstr "用户名"
 
-#: src/handlers/admin_handler.py:407 src/handlers/admin_handler.py:471
+#: src/handlers/admin_handler.py:409 src/handlers/admin_handler.py:473
 msgid "Blocked at"
 msgstr "封禁时间"
 
-#: src/handlers/admin_handler.py:450 src/handlers/command_handler.py:85
+#: src/handlers/admin_handler.py:452 src/handlers/command_handler.py:85
 #: src/handlers/command_handler.py:141 src/handlers/command_handler.py:298
 msgid "User not found"
 msgstr "未找到该用户"
 
-#: src/handlers/admin_handler.py:457
+#: src/handlers/admin_handler.py:459
 msgid "Unban"
 msgstr "解封"
 
-#: src/handlers/admin_handler.py:464
+#: src/handlers/admin_handler.py:466
 msgid "Blocked User Details"
 msgstr "封禁用户详情"
 
-#: src/handlers/admin_handler.py:482
+#: src/handlers/admin_handler.py:484
 msgid "Edit Message"
 msgstr "编辑消息"
 
-#: src/handlers/admin_handler.py:484
+#: src/handlers/admin_handler.py:486
 msgid "Set to Default"
 msgstr "设为默认值"
 
-#: src/handlers/admin_handler.py:490
+#: src/handlers/admin_handler.py:492
 msgid "The default message is an auto-reply to the commands /help and /start"
 msgstr "\"默认消息\"是用户执行/help和/start时的自动回复"
 
-#: src/handlers/admin_handler.py:498
+#: src/handlers/admin_handler.py:500
 msgid ""
 "Let's set up the default message.\n"
 "Send /cancel to cancel this operation.\n"
@@ -402,35 +410,106 @@ msgstr ""
 "\n"
 "请输入消息的内容"
 
-#: src/handlers/admin_handler.py:516
+#: src/handlers/admin_handler.py:518
 msgid "Default message has been updated."
 msgstr "默认消息已被更新"
 
-#: src/handlers/admin_handler.py:525
+#: src/handlers/admin_handler.py:527
 msgid "Default message has been restored."
 msgstr "默认消息已被设为初始值"
 
-#: src/handlers/admin_handler.py:532
+#: src/handlers/admin_handler.py:534
 msgid "Disable Captcha"
 msgstr "禁用验证码"
 
-#: src/handlers/admin_handler.py:533
+#: src/handlers/admin_handler.py:535
 msgid "Math Captcha"
 msgstr "数学验证码"
 
-#: src/handlers/admin_handler.py:534
+#: src/handlers/admin_handler.py:536
 msgid "Button Captcha"
 msgstr "按钮验证码"
 
-#: src/handlers/admin_handler.py:541
+#: src/handlers/admin_handler.py:537
+msgid "TGuard Captcha"
+msgstr "TGuard验证"
+
+#: src/handlers/admin_handler.py:544
 msgid "(Selected) "
 msgstr "(已选择) "
 
-#: src/handlers/admin_handler.py:559
+#: src/handlers/admin_handler.py:566
+msgid ""
+"TGuard Captcha requires API URL and API Key to be configured.\n"
+"Please configure them in TGuard API Settings first."
+msgstr ""
+"TGuard验证需要配置API地址和API密钥。\n"
+"请先在TGuard API设置中完成配置。"
+
+#: src/handlers/admin_handler.py:576
 msgid "Captcha settings updated"
 msgstr "验证码设置已更新"
 
-#: src/handlers/admin_handler.py:569
+#: src/handlers/admin_handler.py:585 src/handlers/admin_handler.py:586
+#: src/handlers/admin_handler.py:589 src/handlers/admin_handler.py:878
+#: src/handlers/message_handler.py:339
+msgid "Not set"
+msgstr "未设置"
+
+#: src/handlers/admin_handler.py:595
+msgid "Set API URL"
+msgstr "设置API地址"
+
+#: src/handlers/admin_handler.py:597
+msgid "Set API Key"
+msgstr "设置API密钥"
+
+#: src/handlers/admin_handler.py:603
+#, python-brace-format
+msgid "API URL: {}"
+msgstr "API地址：{}"
+
+#: src/handlers/admin_handler.py:604
+#, python-brace-format
+msgid "API Key: {}"
+msgstr "API密钥：{}"
+
+#: src/handlers/admin_handler.py:616
+msgid ""
+"Please send the TGuard API URL (e.g., https://example.com).\n"
+"Send /cancel to cancel this operation."
+msgstr ""
+"请发送TGuard API地址（例如：https://example.com）。\n"
+"发送 /cancel 取消此操作。"
+
+#: src/handlers/admin_handler.py:635
+msgid ""
+"Invalid URL format. Please enter a valid URL starting with http:// or "
+"https://"
+msgstr "无效的URL格式。请输入以 http:// 或 https:// 开头的有效URL。"
+
+#: src/handlers/admin_handler.py:644
+#, python-brace-format
+msgid "TGuard API URL updated: {}"
+msgstr "TGuard API地址已更新：{}"
+
+#: src/handlers/admin_handler.py:652
+msgid ""
+"Please send the TGuard API Key.\n"
+"Send /cancel to cancel this operation."
+msgstr ""
+"请发送TGuard API密钥。\n"
+"发送 /cancel 取消此操作。"
+
+#: src/handlers/admin_handler.py:670
+msgid "API key cannot be empty"
+msgstr "API密钥不能为空"
+
+#: src/handlers/admin_handler.py:679
+msgid "TGuard API Key updated successfully."
+msgstr "TGuard API密钥已成功更新。"
+
+#: src/handlers/admin_handler.py:689
 #, python-brace-format
 msgid ""
 "Current time zone: {}.\n"
@@ -443,16 +522,16 @@ msgstr ""
 "\n"
 "输入 /cancel 取消操作"
 
-#: src/handlers/admin_handler.py:584
+#: src/handlers/admin_handler.py:704
 msgid "Invalid time zone. Please try again:"
 msgstr "无效的时区，请重新输入："
 
-#: src/handlers/admin_handler.py:603
+#: src/handlers/admin_handler.py:723
 #, python-brace-format
 msgid "Time zone updated to {}"
 msgstr "时区已调整为{}"
 
-#: src/handlers/admin_handler.py:612
+#: src/handlers/admin_handler.py:732
 msgid ""
 "Please send the content you want to broadcast.\n"
 "Send /cancel to cancel this operation."
@@ -460,93 +539,89 @@ msgstr ""
 "请发送你要广播的内容\n"
 "发送 /cancel 取消操作"
 
-#: src/handlers/admin_handler.py:629 src/handlers/admin_handler.py:630
-#: src/handlers/admin_handler.py:631
+#: src/handlers/admin_handler.py:749 src/handlers/admin_handler.py:750
+#: src/handlers/admin_handler.py:751
 msgid "Unknown"
 msgstr "未知"
 
-#: src/handlers/admin_handler.py:634 src/handlers/admin_handler.py:638
+#: src/handlers/admin_handler.py:754 src/handlers/admin_handler.py:758
 msgid "Failed to retrieve IP information"
 msgstr "获取IP信息失败"
 
-#: src/handlers/admin_handler.py:643
+#: src/handlers/admin_handler.py:763
 msgid "Host IP Information"
 msgstr "部署机器IP信息"
 
-#: src/handlers/admin_handler.py:644
+#: src/handlers/admin_handler.py:764
 #, python-brace-format
 msgid "IP Address: {}"
 msgstr "IP地址：{}"
 
-#: src/handlers/admin_handler.py:645
+#: src/handlers/admin_handler.py:765
 #, python-brace-format
 msgid "Country: {}"
 msgstr "国家/地区：{}"
 
-#: src/handlers/admin_handler.py:646
+#: src/handlers/admin_handler.py:766
 #, python-brace-format
 msgid "City: {}"
 msgstr "城市：{}"
 
-#: src/handlers/admin_handler.py:679 src/handlers/command_handler.py:228
+#: src/handlers/admin_handler.py:799 src/handlers/command_handler.py:228
 msgid "Confirm"
 msgstr "确认"
 
-#: src/handlers/admin_handler.py:681 src/handlers/admin_handler.py:1084
+#: src/handlers/admin_handler.py:801 src/handlers/admin_handler.py:1204
 #: src/handlers/command_handler.py:235
 msgid "Cancel"
 msgstr "取消"
 
-#: src/handlers/admin_handler.py:724 src/handlers/admin_handler.py:725
+#: src/handlers/admin_handler.py:844 src/handlers/admin_handler.py:845
 #, python-brace-format
 msgid "Failed to send message to user {}"
 msgstr "向用户{}发送广播失败"
 
-#: src/handlers/admin_handler.py:727
+#: src/handlers/admin_handler.py:847
 msgid "Broadcast message sent successfully."
 msgstr "消息广播成功"
 
-#: src/handlers/admin_handler.py:740
+#: src/handlers/admin_handler.py:860
 msgid "Spam keywords management is not available"
 msgstr "垃圾关键词管理功能不可用"
 
-#: src/handlers/admin_handler.py:744
+#: src/handlers/admin_handler.py:864
 msgid "Add Keyword"
 msgstr "添加关键词"
 
-#: src/handlers/admin_handler.py:746
+#: src/handlers/admin_handler.py:866
 msgid "View Keywords"
 msgstr "查看关键词"
 
-#: src/handlers/admin_handler.py:748
+#: src/handlers/admin_handler.py:868
 msgid "Reset Spam Topic"
 msgstr "重置垃圾消息会话"
 
-#: src/handlers/admin_handler.py:756
+#: src/handlers/admin_handler.py:876
 msgid "Spam Keywords Management"
 msgstr "垃圾关键词管理"
 
-#: src/handlers/admin_handler.py:757
+#: src/handlers/admin_handler.py:877
 #, python-brace-format
 msgid "Total keywords: {}"
 msgstr "关键词总数：{}"
 
-#: src/handlers/admin_handler.py:758
+#: src/handlers/admin_handler.py:878
 #, python-brace-format
 msgid "Spam Topic ID: {}"
 msgstr "垃圾消息会话已加载：{}"
 
-#: src/handlers/admin_handler.py:758 src/handlers/message_handler.py:308
-msgid "Not set"
-msgstr "未设置"
-
-#: src/handlers/admin_handler.py:759
+#: src/handlers/admin_handler.py:879
 msgid ""
 "Messages containing these keywords will be forwarded to the spam topic "
 "silently."
 msgstr "包含这些关键词的消息将被静默转发到垃圾消息会话。"
 
-#: src/handlers/admin_handler.py:772
+#: src/handlers/admin_handler.py:892
 msgid ""
 "Please send the keyword you want to add to the spam filter.\n"
 "Send /cancel to cancel this operation."
@@ -554,104 +629,104 @@ msgstr ""
 "请发送你要添加到垃圾过滤器的关键词。\n"
 "发送 /cancel 取消操作。"
 
-#: src/handlers/admin_handler.py:799
+#: src/handlers/admin_handler.py:919
 msgid "Keyword cannot be empty"
 msgstr "关键词不能为空"
 
-#: src/handlers/admin_handler.py:810
+#: src/handlers/admin_handler.py:930
 #, python-brace-format
 msgid "Keyword added: {}"
 msgstr "关键词已添加：{}"
 
-#: src/handlers/admin_handler.py:817
+#: src/handlers/admin_handler.py:937
 msgid "Keyword already exists or is invalid"
 msgstr "关键词已存在或无效"
 
-#: src/handlers/admin_handler.py:824
+#: src/handlers/admin_handler.py:944
 #, python-brace-format
 msgid "Failed to add keyword: {}"
 msgstr "添加关键词失败：{}"
 
-#: src/handlers/admin_handler.py:849
+#: src/handlers/admin_handler.py:969
 msgid "Spam Keywords List:"
 msgstr "垃圾关键词列表："
 
-#: src/handlers/admin_handler.py:854
+#: src/handlers/admin_handler.py:974
 msgid "No keywords found"
 msgstr "未找到关键词"
 
-#: src/handlers/admin_handler.py:897 src/handlers/admin_handler.py:924
+#: src/handlers/admin_handler.py:1017 src/handlers/admin_handler.py:1044
 msgid "Keyword not found or expired"
 msgstr "关键词未找到或已过期"
 
-#: src/handlers/admin_handler.py:911
+#: src/handlers/admin_handler.py:1031
 #, python-brace-format
 msgid "Keyword: {}"
 msgstr "关键词：{}"
 
-#: src/handlers/admin_handler.py:912
+#: src/handlers/admin_handler.py:1032
 msgid "Select an action:"
 msgstr "选择一个操作："
 
-#: src/handlers/admin_handler.py:935
+#: src/handlers/admin_handler.py:1055
 #, python-brace-format
 msgid "Keyword deleted: {}"
 msgstr "关键词已删除：{}"
 
-#: src/handlers/admin_handler.py:943
+#: src/handlers/admin_handler.py:1063
 msgid "Failed to delete keyword"
 msgstr "删除关键词失败"
 
-#: src/handlers/admin_handler.py:962
+#: src/handlers/admin_handler.py:1082
 msgid "Disable Auto Reply"
 msgstr "关闭自动回复"
 
-#: src/handlers/admin_handler.py:967
+#: src/handlers/admin_handler.py:1087
 msgid "Enable Auto Reply"
 msgstr "开启自动回复"
 
-#: src/handlers/admin_handler.py:973
+#: src/handlers/admin_handler.py:1093
 msgid "Edit Reply Message"
 msgstr "编辑回复消息"
 
-#: src/handlers/admin_handler.py:979
+#: src/handlers/admin_handler.py:1099
 msgid "Clear Reply Message"
 msgstr "清空回复消息"
 
-#: src/handlers/admin_handler.py:986
+#: src/handlers/admin_handler.py:1106
 msgid "Blocked User Auto Reply Settings"
 msgstr "拉黑用户自动回复设置"
 
-#: src/handlers/admin_handler.py:987
+#: src/handlers/admin_handler.py:1107
 #, python-brace-format
 msgid "Status: {}"
 msgstr "状态：{}"
 
-#: src/handlers/admin_handler.py:987 src/handlers/admin_handler.py:1007
+#: src/handlers/admin_handler.py:1107 src/handlers/admin_handler.py:1127
 msgid "Enabled"
 msgstr "已启用"
 
-#: src/handlers/admin_handler.py:988
+#: src/handlers/admin_handler.py:1108
 #, python-brace-format
 msgid "Current message: {}"
 msgstr "当前消息：{}"
 
-#: src/handlers/admin_handler.py:989
+#: src/handlers/admin_handler.py:1109
 msgid "Not set (no reply will be sent)"
 msgstr "未设置（不会发送回复）"
 
-#: src/handlers/admin_handler.py:991
+#: src/handlers/admin_handler.py:1111
 msgid ""
 "When enabled, blocked users will receive this message when they try to send "
 "messages."
 msgstr "启用后，被拉黑的用户发送消息时将收到此回复。"
 
-#: src/handlers/admin_handler.py:1008
+#: src/handlers/admin_handler.py:1128
 #, python-brace-format
 msgid "Blocked user auto-reply has been {}."
 msgstr "拉黑用户自动回复{}。"
 
-#: src/handlers/admin_handler.py:1015
+#: src/handlers/admin_handler.py:1135
 msgid ""
 "Please send the message to reply to blocked users.\n"
 "Send /cancel to cancel this operation.\n"
@@ -663,28 +738,28 @@ msgstr ""
 "\n"
 "注意：发送空消息可以禁用自动回复。"
 
-#: src/handlers/admin_handler.py:1051
+#: src/handlers/admin_handler.py:1171
 #, python-brace-format
 msgid "Blocked user reply message updated: {}"
 msgstr "拉黑用户回复消息已更新：{}"
 
-#: src/handlers/admin_handler.py:1055
+#: src/handlers/admin_handler.py:1175
 msgid "Blocked user reply message cleared. No auto-reply will be sent."
 msgstr "拉黑用户回复消息已清空。不会发送自动回复。"
 
-#: src/handlers/admin_handler.py:1066
+#: src/handlers/admin_handler.py:1186
 msgid "Blocked user reply message cleared."
 msgstr "拉黑用户回复消息已清空。"
 
-#: src/handlers/admin_handler.py:1074 src/handlers/admin_handler.py:1097
+#: src/handlers/admin_handler.py:1194 src/handlers/admin_handler.py:1217
 msgid "Bot instance not available"
 msgstr "Bot实例不可用"
 
-#: src/handlers/admin_handler.py:1080
+#: src/handlers/admin_handler.py:1200
 msgid "Confirm Reset"
 msgstr "确认重置"
 
-#: src/handlers/admin_handler.py:1089
+#: src/handlers/admin_handler.py:1209
 msgid ""
 "Are you sure you want to reset the spam topic?\n"
 "This will create a new spam topic. The old topic will not be deleted."
@@ -692,11 +767,11 @@ msgstr ""
 "确定要重置垃圾话题吗？\n"
 "这将创建一个新的垃圾话题。旧话题不会被删除。"
 
-#: src/handlers/admin_handler.py:1101
+#: src/handlers/admin_handler.py:1221
 msgid "Resetting spam topic..."
 msgstr "正在重置垃圾话题……"
 
-#: src/handlers/admin_handler.py:1111
+#: src/handlers/admin_handler.py:1231
 #, python-brace-format
 msgid ""
 "Spam topic reset successfully.\n"
@@ -705,7 +780,7 @@ msgstr ""
 "垃圾话题重置成功。\n"
 "新话题ID：{}"
 
-#: src/handlers/admin_handler.py:1118
+#: src/handlers/admin_handler.py:1238
 msgid "Failed to reset spam topic"
 msgstr "重置垃圾话题失败"
 
@@ -725,28 +800,28 @@ msgstr "验证成功，现在你可以发送消息了"
 msgid "Invalid user ID"
 msgstr "无效的用户ID"
 
-#: src/handlers/callback_handler.py:126
+#: src/handlers/callback_handler.py:132
 msgid "Broadcast cancelled"
 msgstr "消息广播已取消"
 
-#: src/handlers/callback_handler.py:135 src/handlers/callback_handler.py:136
+#: src/handlers/callback_handler.py:141 src/handlers/callback_handler.py:142
 msgid "Failed to terminate the thread"
 msgstr "无法删除该会话"
 
-#: src/handlers/callback_handler.py:148
+#: src/handlers/callback_handler.py:154
 msgid "Thread deleted"
 msgstr "话题已删除"
 
-#: src/handlers/callback_handler.py:150
+#: src/handlers/callback_handler.py:156
 #, python-brace-format
 msgid "Failed to delete thread: {}"
 msgstr "删除话题失败：{}"
 
-#: src/handlers/callback_handler.py:151
+#: src/handlers/callback_handler.py:157
 msgid "Failed to delete thread"
 msgstr "删除话题失败"
 
-#: src/handlers/callback_handler.py:189
+#: src/handlers/callback_handler.py:195
 msgid "Invalid action received"
 msgstr "接收到无效的操作"
 
@@ -794,7 +869,7 @@ msgstr "请确认是否要删除该会话？"
 msgid "Please reply to the message you want to delete"
 msgstr "请回复你需要删除的消息"
 
-#: src/handlers/command_handler.py:268 src/handlers/message_handler.py:373
+#: src/handlers/command_handler.py:268 src/handlers/message_handler.py:404
 msgid "[Alert]"
 msgstr "[提示]"
 
@@ -930,42 +1005,61 @@ msgstr "回答不正确，请重新输入"
 msgid "User {} passed the captcha"
 msgstr "用户{}通过了人机验证"
 
-#: src/handlers/message_handler.py:241
+#: src/handlers/message_handler.py:246
+#, python-brace-format
+msgid "User {} completed TGuard verification (checked on message)"
+msgstr "用户{}已完成TGuard验证"
+
+#: src/handlers/message_handler.py:250
+#, python-brace-format
+msgid "User {} verification still pending"
+msgstr "用户{}仍在待验证状态"
+
+#: src/handlers/message_handler.py:252 src/handlers/message_handler.py:262
+msgid "⚠️ Your message was not sent. Please complete verification first."
+msgstr "⚠️ 您的消息未发送。请先完成验证。"
+
+#: src/handlers/message_handler.py:258
 #, python-brace-format
 msgid "User {} is not verified"
 msgstr "用户{}未通过验证"
 
-#: src/handlers/message_handler.py:245
-msgid "⚠️ Your message was not sent. Please complete verification first."
-msgstr "⚠️ 您的消息未发送。请先完成验证。"
-
-#: src/handlers/message_handler.py:257
+#: src/handlers/message_handler.py:274
 msgid ""
 "Captcha is enabled. Please solve the following question and send the result "
 "directly\n"
 msgstr "验证码已启用。请回答以下问题并直接发送结果\n"
 
-#: src/handlers/message_handler.py:260 src/handlers/message_handler.py:262
-#: src/utils/captcha.py:38
+#: src/handlers/message_handler.py:281 src/utils/captcha.py:128
+#, python-brace-format
+msgid "TGuard verification error: {}"
+msgstr "TGuard验证错误：{}"
+
+#: src/handlers/message_handler.py:285
+msgid "Verification system error. Please try again later."
+msgstr "验证系统错误。请稍后重试。"
+
+#: src/handlers/message_handler.py:291 src/handlers/message_handler.py:293
+#: src/utils/captcha.py:42
 msgid "Invalid captcha setting"
 msgstr "无效的验证码设置"
 
-#: src/handlers/message_handler.py:293
+#: src/handlers/message_handler.py:324
 #, python-brace-format
 msgid "Creating a new thread for user {}"
 msgstr "与用户{}新建话题"
 
-#: src/handlers/message_handler.py:343 src/handlers/message_handler.py:346
+#: src/handlers/message_handler.py:374 src/handlers/message_handler.py:377
 #, python-brace-format
 msgid "Failed to forward message from user {}"
 msgstr "转发用户{}的消息失败"
 
-#: src/handlers/message_handler.py:370 src/handlers/message_handler.py:373
+#: src/handlers/message_handler.py:401 src/handlers/message_handler.py:404
 #, python-brace-format
 msgid "Failed to forward message to user {}"
 msgstr "无法向用户{}发送消息"
 
-#: src/handlers/message_handler.py:377
+#: src/handlers/message_handler.py:408
 msgid "Chat not found, please remove this topic manually"
 msgstr "未找到对应会话，请手动删除当前话题"
 
@@ -974,9 +1068,62 @@ msgstr "未找到对应会话，请手动删除当前话题"
 msgid "Invalid regular expression: {}"
 msgstr "正则表达式{}不合法"
 
-#: src/utils/captcha.py:34
+#: src/utils/captcha.py:36
 msgid "Please click the button to verify."
 msgstr "请点击按钮以完成验证"
+
+#: src/utils/captcha.py:50
+msgid "TGuard API URL or Key not configured"
+msgstr "TGuard API URL或Key未配置"
+
+#: src/utils/captcha.py:62
+msgid "TGuard API not configured"
+msgstr "TGuard API未配置"
+
+#: src/utils/captcha.py:79
+msgid "Invalid response from TGuard API"
+msgstr "TGuard API返回信息不合法"
+
+#: src/utils/captcha.py:99
+msgid "🔐 Complete Verification"
+msgstr "🔐 完成验证"
+
+#: src/utils/captcha.py:105
+msgid ""
+"Please complete the verification by clicking the button below.\n"
+"After completing verification, send a message to check your verification "
+"status."
+msgstr ""
+"请点击下方按钮以完成人机验证。\n"
+"完成认证后，请再次发送消息。"
+
+#: src/utils/captcha.py:114
+#, python-brace-format
+msgid "TGuard API error: {}"
+msgstr "TGuard API错误：{}"
+
+#: src/utils/captcha.py:126 src/utils/captcha.py:140
+msgid "Failed to create verification request"
+msgstr "无法创建用户验证请求"
+
+#: src/utils/captcha.py:172
+msgid "✅ Verification successful! You can now send messages."
+msgstr "✅ 验证成功，现在你可以发送消息了。"
+
+#: src/utils/captcha.py:176
+#, python-brace-format
+msgid "User {} completed TGuard verification"
+msgstr "用户{}已完成TGuard验证"
+
+#: src/utils/captcha.py:180
+#, python-brace-format
+msgid "TGuard verification token expired for user {}"
+msgstr "用户{}发起的TGuard验证令牌已过期"
+
+#: src/utils/captcha.py:184
+#, python-brace-format
+msgid "Error checking TGuard verification status: {}"
+msgstr "从TGuard查询验证状态时发生错误：{}"
 
 #: src/utils/message_queue.py:64
 #, python-brace-format
