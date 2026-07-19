@@ -945,12 +945,16 @@ class AdminHandler:
                 "Accept": "*/*"
             }
             with httpx.Client(http2=True, headers=headers, verify=True) as client:
-                res = client.get("https://ipapi.co/json", timeout=5)
+                res = client.get("https://1.1.1.1/cdn-cgi/trace", timeout=5)
             res.raise_for_status()
-            data = res.json()
+            data = {}
+            for line in res.text.splitlines():
+                if "=" in line:
+                    key, value = line.split("=", 1)  # 只分割第一个=
+                    data[key] = value
             ip = data.get('ip', _('Unknown'))
-            country = data.get('country_name', _('Unknown'))
-            city = data.get('city', _('Unknown'))
+            country = data.get('loc', _('Unknown'))
+            city = data.get('colo', _('Unknown'))
         except httpx.HTTPStatusError as e:
             logger.error(f"Failed to retrieve IP information: {e}")
             self.bot.send_message(self.group_id, _("Failed to retrieve IP information"))
